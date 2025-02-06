@@ -79,7 +79,7 @@ export const App: React.FC = () => {
               {isLoaded && todos.length > 0 && (
                 <TodoList
                   todos={filteredTodos}
-                  selectedTodo={handleSelectTodo}
+                  onSelectTodo={handleSelectTodo}
                   currentTodo={selectedTodo}
                 />
               )}

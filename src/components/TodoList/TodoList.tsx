@@ -4,13 +4,13 @@ import { Todo } from '../../types/Todo';
 
 type Props = {
   todos: Todo[];
-  selectedTodo: (todo: Todo) => void;
+  onSelectTodo: (todo: Todo) => void;
   currentTodo: Todo | null;
 };
 
 export const TodoList: React.FC<Props> = ({
   todos,
-  selectedTodo,
+  onSelectTodo,
   currentTodo,
 }) => (
   <table className="table is-narrow is-fullwidth">
@@ -32,7 +32,7 @@ export const TodoList: React.FC<Props> = ({
         <TodoCard
           key={todo.id}
           todo={todo}
-          selectedTodo={selectedTodo}
+          onSelectTodo={onSelectTodo}
           currentTodo={currentTodo}
         />
       ))}

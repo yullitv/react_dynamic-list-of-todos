@@ -2,13 +2,13 @@ import { Todo } from '../../types/Todo';
 
 type Props = {
   todo: Todo;
-  selectedTodo: (todo: Todo) => void;
+  onSelectTodo: (todo: Todo) => void;
   currentTodo: Todo | null;
 };
 
 export const TodoCard: React.FC<Props> = ({
   todo,
-  selectedTodo,
+  onSelectTodo,
   currentTodo,
 }) => {
   return (
@@ -31,7 +31,7 @@ export const TodoCard: React.FC<Props> = ({
           data-cy="selectButton"
           className="button"
           type="button"
-          onClick={() => selectedTodo(todo)}
+          onClick={() => onSelectTodo(todo)}
         >
           <span className="icon">
             {currentTodo && todo.id === currentTodo.id ? (
